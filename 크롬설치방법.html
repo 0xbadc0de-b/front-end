@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>크롬설치방법</title>
+	<link href="css/msbangStyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<h1>kali linux 크롬 설치</h1>
+
+	<p>1. 크롬 사이트에 들어가서 deb로 다운해준다.</p>
+
+	<p>2.  터미널로 들어가서
+	<br>dpkg -i google-chrome-stable_current_amd64.deb </p>
+
+	<p>(중간에 오류 발생시)
+	<br>apt-get -f install 로 강제 설치를 진행한다.</p>
+
+	<p>왜 실행이 안되냐면 root 사용자이기 때문이다. 
+	<br>그러기에 우리는 root사용자가 사용할수 있게 설정할 것이다.</p>
+
+	<p>3. # vi /usr/bin/google-chrome </p>
+
+	<p>맨 마지막 라인에 빨간색 부분을 추가해준다.</p>
+
+	<p>exec -a "$0" "$HERE/chrome" "$@" <span class="font1">--no-sandbox --user-data-dir</span></p>
+
+	<p>이걸로 설정을 끝났다. chrome을 더블클릭해서 실행해도 잘되는 것을 확인 할수 있다.
+	<br>터미널에서 google-chrome 를 치면 크롬을 실행할수 있다.</p>
+
+</body>
+</html>
