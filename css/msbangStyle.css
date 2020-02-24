@@ -1,7 +1,7 @@
 .font1 { color:red;	font-weight: bold; }
 
 /* 테투리만 있는 글상자 */
-.textBox1 {	border-style: solid; border-width: 2px; padding: 12px; word-break: break-all; border-color: LightSalmon; }
+.textBox1 { border-style: solid; border-width: 2px; padding: 12px; word-break: break-all; border-color: LightSalmon; }
 
 /* 테투리 + 배경색 있는 글상자 */
 .textBox2 { border-style: solid; border-width: 2px; padding: 12px; word-break: break-all; border-color: LightGray; background-color:rgba(211, 211, 211, 0.2); } 
