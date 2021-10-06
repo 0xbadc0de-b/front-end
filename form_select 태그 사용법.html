@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+     <meta charset="utf-8">
+		 <title>form_select 태그 사용법</title>
+     <style>
+			 body {
+				background-color:#fff; 
+			 }
+			 form fieldset{
+				margin-bottom:25px; 
+			 }
+			 form legend{
+				font-size:15px;
+				font-weight:600; 
+			 }
+			.reg {
+				font-size:14px;
+				width:110px;
+				color:#390;
+				font-weight:bold;		
+				float:left;
+				text-align:right;
+				margin-right:10px;
+			 }	 
+			 form ul li{
+				list-style:none; 
+				margin: 15px 0;	
+				font-size:14px;	
+			 }
+	 </style>
+  </head>
+  <body>
+  <h1>form_select 태그 사용법</h1>
+	<form>
+    <fieldset>
+    <legend>제목</legend>
+    <ul>    
+    	<li>
+			<label class="reg" for="class">학과</label>
+			<!-- 드롭다운 메뉴 항목 갯수 3개, multiple은 여러개 다수선택(ctrl) + 메뉴한번에 보여주기(기본4개)  -->
+			<select size="5" id="class" multiple>
+				<option value="v01">건축공학과</option>
+				<option value="v02">기계공학과</option>
+				<option value="v03">산업공학과</option>
+				<option value="v04">전기전자공학과</option>
+				<option value="v05" selected>컴퓨터공학과</option>
+				<option value="v06">화학공학과</option>
+			</select>
+		</li>
+		<li>
+			<label class="reg" for="class">학과</label>
+			<select id="class">
+				<optgroup label="공과대학">
+					<option value="archi">건축공학과</option>
+					<option value="mechanic">기계공학과</option>
+					<option value="indust">산업공학과</option>
+					<option value="elec">전기전자공학과</option>
+					<option value="computer">컴퓨터공학과</option>
+					<option value="chemical">화학공학과</option>
+				</optgroup>
+				<optgroup label="인문대학">
+					<option value="history">사학과</option>
+					<option value="lang">어문학부</option>
+					<option value="philo">철학</option>
+				</optgroup>
+			</select>
+		</li>
+    </ul>
+	</fieldset>
+  </form>
+  </body>
+</html>

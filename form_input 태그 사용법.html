@@ -1,0 +1,154 @@
+<!doctype html>
+
+<html lang="ko">
+  <head>
+		<meta charset="utf-8">
+		<title>form_input 태그 사용법</title>
+    <style>
+		 ul {
+			 list-style:none;
+		 }
+		 li {
+			 margin:10px;
+		 }
+		 li label {
+			 width:120px;
+			float:left;
+			text-align:right;
+			padding-right:8px;
+		 }
+		 input[type="submit"] {
+			 text-align:center;
+			 width:100%;
+			 height:30px;
+			 margin-top:15px;
+		 }
+	 </style>
+  </head>
+  <body>
+		<h1>form_input 태그 사용법</h1>
+		<form>
+			<fieldset>
+				<legend>로그인 정보</legend>
+				<ul>
+					<li>
+    				<label for="user-id">아이디 </label>
+					<!--
+						input 태그 사용시 type, id, name, value 순서로 작성하자
+					-->
+						 <input type="text" id="user-id" name="user-id" size="50" placeholder="size 속성 길게 늘림">
+					</li>
+					<li>
+    				<label for="user-id">이름 </label>
+						 <input type="text" id="user-name" name="user-name" value="내이름" readonly> => 읽기전용
+					</li>
+					<li>
+						<label for="pwd1">비밀번호 </label>
+						<input type="password" id="pwd1">
+					</li>					
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend>개인 정보</legend>
+				<ul>					
+					<li>
+						<label for="mail">메일주소</label>
+						<input type="email" id="mail" placeholder="@ 자동체크">
+						<input type="hidden" id="AAAA" value="서버에전송할값">
+					</li>
+					<li>
+						<label for="phone">전화번호</label>
+						<input type="tel" id="phone"> => 딱히 무슨기능인지 모르겠음
+					</li>
+					<li>
+						<label for="homep">홈페이지</label>
+						<input type="url" id="homep" placeholder="http:// 문자열 자동체크">
+					</li>
+					<li>					
+						<label for="interest">관심분야</label>
+						<input type="text" id="interest" list="choices"> ==> datalist 사용
+						<datalist id="choices">
+							<option value="grammar" label="문법"></option>
+							<option value="voca" label="어휘"></option>
+							<option value="speaking" label="회화"></option>
+							<option value="listening" label="리스닝"></option>
+							<option value="news" label="뉴스청취"></option>
+						</datalist>
+					</li>
+				</ul>
+			</fieldset>
+			<br>
+			text : 최대 입력가능 글자수 4개
+			<input type="text" id="T01" name="T01" value="" maxlength="4" autofocus placeholder="화면 새로고침시 커서 지정"> ==> autofocus
+			<br>
+			text : 
+			<input type="text" id="T01" name="T01" value="", required placeholder="필수 필드"> => 입력없이 submit 클릭하면 알림뜸
+			<br>
+			<label>text : <input type="text" id="user_id" size="10" minlength="4" maxlength="15"></label><small style="color:red;"> 4~15자리 이내의 영문과 숫자</small>			
+			<br>
+			text : <input type="text" autocomplete="off"> ==> 자동완성끄기(기본on)
+			<br>
+			search : 입력창에 x 표시됨 = 한번에 지울때 사용
+			<input type="search">			
+			<br>
+			number :
+			<input type="number" min="1" max="5" value="1"> 개 ==> 최소/최대값 설정 가능
+			<br>
+			number : 숫자간격 설정가능
+			<input type="number" value="1" step="2"> 개
+			<br>
+			range : 슬라이드바 범위
+			<input type="range" value="1"> 
+			범위(1~3) 지정시=>
+			<input type="range" value="1" min="1" max="3">
+			<br>
+			<br>
+			radio : 
+			<label><input type="radio" name="subject" value="speaking">회화</label>
+			<label><input type="radio" name="subject" value="grammar">문법</label>
+			<label><input type="radio" name="subject" value="writing">작문</label>       
+			=> 그룹상태라서 1개만 선택가능			
+			<br>
+			<br>	
+			checkbox : 
+			<label><input type="checkbox" name="mailing1" value="news">해외 단신</label>
+			<label><input type="checkbox" name="mailing2" value="dialog" checked>5분 회화</label>
+			<label><input type="checkbox" name="mailing3" value="pops">모닝팝스</label>
+			=> 복수선택 가능
+			<br>
+			<br>
+			<labe>color : <input type="color" value="#00ff00"></label>
+			<br>
+			<br>
+			date : <input type="date">
+			month : <input type="month">
+			week : <input type="week"> ==> 브라우저 마다 보여주는 방법 다름
+			<br>
+			<br>
+			time : 
+			<label>시작 시간<input type="time" value="09:00" id="start1"></label>
+			<label>종료 시간<input type="time" value="18:00" id="end1"></label>			
+			<br>
+			<br>
+			datetime-local :
+			<label>시작 시간<input type="datetime-local" value="2016-03-02T09:00" id="start2"></label>
+			<label>종료 시간<input type="datetime-local" value="2016-03-02T18:00" id="end2"></label>
+			<br>
+			<br>
+			reset : <input type="reset" value="다시입력">
+			<br>
+			<br>
+			image : <input type="image" id="butt" src="images/login.jpg" alt="login">
+			<br>
+			<br>
+			button : <input type="button" value="새탭열기" onclick="window.open()">
+			<br>
+			<br>
+			file : <input type="file">
+			<br>
+			<br>
+			<input type="submit" value="submit에 스타일시트 효과줬음">
+		</form>
+  </body>
+</html>
+

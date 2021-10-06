@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<title>수익률 계산기</title>
+	<script>
+		window.onload = function(){
+			var input = window.document.getElementById("input");
+			var output = window.document.getElementById("output");
+			var result = window.document.getElementById("result");
+			var result2 = window.document.getElementById("result2");
+			
+			result.onclick = function(){
+				var strTmp;
+				var profit = (output.value - input.value) / input.value * 100;
+				
+				strTmp = "(" + output.value + " - " + input.value + ") / " + input.value + " * 100 = " + profit + "%";
+				result2.innerHTML = "수익률 : <b>"+strTmp+"</b>";
+			}
+		}
+	</script>
+</head>
+<body>	
+	<h1>계산기</h1>
+	<div>
+		<label>매입가</label><input type="text" id="input" name="input">
+		<label>매도가</label><input type="text" id="output" name="output">
+		<button id="result">결과</button>
+	</div>
+	<br>
+	<div id="result2">수익률 : </div>
+</body>
+</html>
+
