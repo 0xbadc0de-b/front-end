@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<title>마우스오버 메시지창</title>	
+	<meta charset="utf-8">
+	<!-- http://www.fullwork.co.kr/bbs/board.php?bo_table=fw_tip&wr_id=11&sst=wr_good&sod=asc&sop=and&page=1 -->
+	<!-- CSS로 만든 마우스오버 시 나타나는 메시지창 -->
+	
+	<style>
+		.help-tip {
+			width: 24px;
+			height: 24px;
+			background: #BCDBEA;
+			position: absolute;
+			top: 18px;
+			right: 18px;
+			text-align: center;
+			border-radius: 50%;
+			font-size: 14px;
+			line-height: 26px;
+			cursor: default;
+		}
+		.help-tip:before {
+			content: "?";
+			font-weight: bold;
+			color: #fff;
+		}
+		.help-tip:hover p {
+			display: block;
+			transform-origin: 100% 0%;
+			-webkit-animation: fadeIn 0.3s ease-in-out;
+			animation: fadeIn 0.3s ease-in-out;
+		}
+		.help-tip p {
+			width: 300px;
+			border-radius: 5px;
+			box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+			background-color: #1E2021;
+			position: absolute;
+			right: -4px;
+			padding: 20px;
+			text-align: left;			
+			color: #fff;
+			font-size: 13px;
+			line-height: 1.4;
+			display: none;
+		}
+		.help-tip p:before {	/* 메시지창 우측상단 세모 꼭지 */
+			width: 0px;
+			height: 0px;			
+			position: absolute;
+			right: 10px;
+			top: -12px;
+			content: "";
+			border: 6px solid transparent;	/* 테두리 불투명하게 */
+			border-bottom-color: #1E2021;	/* 테두리 아래만 검정 */
+		}
+		.help-tip p:after {
+			width: 100%;
+			height: 40px;			
+			content: "";			
+			position: absolute;
+			top: -40px;
+			left: 0px;
+		}
+		@-webkit-keyframes fadeIn {
+			0% {
+				opacity: 0;
+				transform: scale(0.6);
+			}
+			100% {
+				opacity: 100%;
+				transform: scale(1);
+			}
+		}
+		@keyframes fadeIn {
+			0% { opacity: 0; }
+			100% { opacity: 100%; }
+		}
+	</style>
+</head>
+<body>
+	<div class="help-tip">
+		<p>마우스 오버시 알림메시지창이 뜹니다.<br>CSS로만 만들어졌습니다.</p>
+	</div>
+</body>
+</html>
